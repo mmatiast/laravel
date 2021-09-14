@@ -20,7 +20,9 @@ class PortfolioController extends Controller
     }
      public function show($id)
      {
-       return Project::find($id);
+       return view('projects.show', [
+         'project'=> Project::find($id)
+       ]);
      }
 
 }
