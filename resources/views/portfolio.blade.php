@@ -5,10 +5,12 @@ Portafolio
 @section('content')
 <h1>Portfolio</h1>
 <ul>
-	@forelse($portfolio as $portfolioItem)
-		<li>{{$portfolioItem['title']}}</li>
+	@forelse($projects as $project)
+	<li><a href="{{ route('portfolio.show', $project) }}">{{$project->title}}<a/></li>
 	@empty
-	<li>no hay elemento para mostsa</li>
+	<li>No hay elementos que mostrar</li>
 	@endforelse
+  {{ $projects->links() }}
+
 </ul>	
 @endsection 
