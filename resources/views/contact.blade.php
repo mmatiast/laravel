@@ -1,7 +1,5 @@
 @extends('layout')
-@section('title')
-Contacto
-@endsection 
+@section('title','Crear proyecto')
 @section('content')
 <h1>contact</h1>
 <form method="POST" acction="{{ route('messages.store') }}">

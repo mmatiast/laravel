@@ -13,7 +13,7 @@
     @endif
 
  <form method="POST" action="{{ route('projects.store')}}">
- 	@csrf 
+ 	@csrf
  	<label>
  		Titulo del proyecto <br>
  		<input type="text" name="title">
@@ -27,11 +27,11 @@
  	<label>
  		Descripcion del proyecto <br>
  		<textarea name="description"></textarea>
- 	</label> 
+ 	</label>
  	<br>
  	<button>Guardar</button>
 
- 	
- 	
+
+
  </form>
-@endsection 
+@endsection

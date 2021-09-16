@@ -1,9 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\Project;
 
+use App\Models\Project;
 use Illuminate\Http\Request;
+use App\Http\Requests\CreateProjectRequest;
 
 class ProjectController extends Controller
 {
@@ -30,17 +31,19 @@ class ProjectController extends Controller
        return view('projects.create');
      }
 
-     public function store() 
+     public function store(CreateProjectRequest $request)
      {
-
-      // return request(['title']);
-       $fields = request ()->validate([
-        'title' => 'required',
-        'url' => 'required',
-        'description' => 'required'
-      ]);
-        Project::create($fields);
+        // return $request->validated();
+        Project::create($request->validated());
         return redirect()->route('projects.index');
+     }
+
+     public function edit(Project $project)
+     {
+       return view('projects.edit',[
+         'project' => $project
+       ]);
+
      }
 
 }
