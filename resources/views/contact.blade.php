@@ -4,7 +4,7 @@ Contacto
 @endsection 
 @section('content')
 <h1>contact</h1>
-<form method="POST" acction="{{ route('contact') }}">
+<form method="POST" acction="{{ route('messages.store') }}">
 	@csrf 
 	<input name="name" placeholder="nombre...." value="{{ old('name') }}"><br>
 	{!! $errors->first('name', '<small>:message</small></br>') !!}

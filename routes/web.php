@@ -1,13 +1,19 @@
-<?php
+ <?php
 
 
 Route::view('/', 'home')->name('home'); 
-Route::view('/about', 'about')->name('about');
+Route::view('/Quienes-somos', 'about')->name('about');
 
-Route::get('/portfolio', 'PortfolioController@index')->name('portfolio');
-Route::get('/portfolio/{id}', 'PortfolioController@show')->name('portfolio.show');
+Route::get('/portafolio', 'ProjectController@index')->name('projects.index');
+Route::get('/portafolio/crear', 'ProjectController@create')->name('projects.create');
+Route::post('/portafolio', 'ProjectController@store')->name('projects.store');
+Route::get('/portafolio/{project}', 'ProjectController@show')->name('projects.show');  
 
-Route::view('/contact', 'contact')->name('contact');
-Route::post('/contact', 'MessageController@store');
+
+
+ 
+
+Route::view('/contacto', 'contact')->name('contact');
+Route::post('/contact', 'MessageController@store')->name('messages.store');
 
 
