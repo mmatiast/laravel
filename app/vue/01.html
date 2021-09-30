@@ -4,20 +4,29 @@
 	<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>hola mundo con vue.js</title>
+	<title>vue</title>
 </head>
 
 <body>
 	<div id="app">
         <h1>{{titulo}}</h1>
+        <input type="text" v-model="nuevaFruta">
+        <button @click="agregarFruta">agregar</button>
 
         <ul>
-            <li v-for="fruta of frutas">
+            <li v-for="fruta of frutas" @keyup.enter=>
                 {{fruta.cantidad}} - {{fruta.nombre}}
                 <span v-if="fruta.cantidad == 0"> - Sin Stock </span>
+                <!-- == evalua el valor de la variable
+                === evalua el valor de la variable y el tipo de dato
+                2 == 2  - true
+                2 === 2 - true
+                '2' == 2 - true
+                '2' === 2 - falso -->
             </li>
         </ul>
     </div>
+   
 <!-- development version, includes helpful console warnings -->
 <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
     <script src="01.js"></script>

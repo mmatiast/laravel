@@ -3,9 +3,20 @@ const app = new Vue({
     data: {
         titulo: 'prueba con vue',
         frutas: [
-            {nombre: 'pera', cantidad:10},
-            {nombre: 'mazana', cantidad:0},
-            {nombre: 'platano', cantidad:11}
-        ]
+            {nombre: 'informatica', cantidad:10},
+            {nombre: 'desarrollo', cantidad:0},
+            {nombre: 'redes', cantidad:11}
+        ],
+        nuevaFruta: ''
+    },
+    methods:{
+        agregarFruta(){
+         this.frutas.push({
+             nombre: this.nuevaFruta, cantidad: 0
+
+         });
+         this.nuevaFruta = '';
+        }
     }
+    
 })
